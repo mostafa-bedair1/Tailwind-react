@@ -1,0 +1,50 @@
+import { useState } from "react"
+import TestmonialBox from "./TestmonialBox";
+
+function Testimonials() {
+    const [testData, setTestData] = useState ([
+        {
+            id: 1,
+            desc: "Lorem imflll login cingtke cinsrte demoo long imflll login cingtke cinsrte demoo long terdm valditett isseus terdm valditett isseus men been too",
+            image: "profile-1.jpg",
+            position: "Founder &CEO, Huddle",
+            name: "Ahmed",
+        },
+        {
+            id: 2,
+            desc: "Lorem imflll login cingtke cinsrte demoo long terdm valditett imflll login cingtke cinsrte demoo long terdm valditett isseus isseus men been too",
+            image: "profile-2.jpg",
+            position: "Founder &CEO, Huddle",
+            name: "Mohamed",
+        },
+        {
+            id: 3,
+            desc: "Lorem imflll login cingtke cinsrte demoo imflll login cingtke cinsrte demoo long terdm valditett isseuslong terdm valditett isseus men been too",
+            image: "profile-3.jpg",
+            position: "Founder &CEO, Huddle",
+            name: "Eman",
+        },
+    ]);
+  return (
+    <section className="pb-[350px]">
+            <div className="container relative">
+                <div className="absolute left-[20px] top-[-35px]">
+                    <img src="/src/assets/images/bg-quotes.png" alt="quote" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[40px] relative z-10">
+                    {testData.map((item) => (
+                        <TestmonialBox
+                        key={item.id}
+                        desc={item.desc}
+                        image={item.image}
+                        position={item.position}
+                        name={item.name}
+                        />
+                    )) }
+                </div>
+            </div>
+    </section>
+  )
+}
+
+export default Testimonials
